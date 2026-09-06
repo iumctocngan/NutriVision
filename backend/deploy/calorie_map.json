@@ -1,0 +1,402 @@
+{
+  "apple_pie": {
+    "name": "Bánh Táo Apple Pie",
+    "category": "Tráng Miệng",
+    "calories": 320,
+    "protein_g": 3.0,
+    "carbs_g": 45.0,
+    "fat_g": 14.0
+  },
+  "baby_back_ribs": {
+    "name": "Sườn Nướng BBQ",
+    "category": "Món Nướng",
+    "calories": 580,
+    "protein_g": 45.0,
+    "carbs_g": 12.0,
+    "fat_g": 38.0
+  },
+  "baklava": {
+    "name": "Bánh Hạt Baklava",
+    "category": "Tráng Miệng",
+    "calories": 330,
+    "protein_g": 5.0,
+    "carbs_g": 38.0,
+    "fat_g": 18.0
+  },
+  "beignets": {
+    "name": "Bánh Rán Beignets",
+    "category": "Tráng Miệng",
+    "calories": 290,
+    "protein_g": 4.0,
+    "carbs_g": 35.0,
+    "fat_g": 15.0
+  },
+  "bibimbap": {
+    "name": "Cơm Trộn Hàn Quốc",
+    "category": "Cơm Món",
+    "calories": 490,
+    "protein_g": 21.0,
+    "carbs_g": 68.0,
+    "fat_g": 14.0
+  },
+  "bread_pudding": {
+    "name": "Pudding Bánh Mì",
+    "category": "Tráng Miệng",
+    "calories": 270,
+    "protein_g": 6.0,
+    "carbs_g": 42.0,
+    "fat_g": 9.0
+  },
+  "caesar_salad": {
+    "name": "Salad Caesar Gà",
+    "category": "Salad",
+    "calories": 220,
+    "protein_g": 15.0,
+    "carbs_g": 10.0,
+    "fat_g": 14.0
+  },
+  "caprese_salad": {
+    "name": "Salad Caprese Ý",
+    "category": "Salad",
+    "calories": 190,
+    "protein_g": 10.0,
+    "carbs_g": 6.0,
+    "fat_g": 14.0
+  },
+  "carrot_cake": {
+    "name": "Bánh Cà Rốt",
+    "category": "Tráng Miệng",
+    "calories": 340,
+    "protein_g": 4.0,
+    "carbs_g": 48.0,
+    "fat_g": 16.0
+  },
+  "cheesecake": {
+    "name": "Bánh Phô Mai Cheesecake",
+    "category": "Tráng Miệng",
+    "calories": 400,
+    "protein_g": 7.0,
+    "carbs_g": 32.0,
+    "fat_g": 28.0
+  },
+  "chicken_curry": {
+    "name": "Cà Rê Gà Ấn Độ",
+    "category": "Món Nước",
+    "calories": 410,
+    "protein_g": 28.0,
+    "carbs_g": 22.0,
+    "fat_g": 24.0
+  },
+  "chicken_quesadilla": {
+    "name": "Bánh Quesadilla Gà",
+    "category": "Fast Food",
+    "calories": 510,
+    "protein_g": 32.0,
+    "carbs_g": 40.0,
+    "fat_g": 24.0
+  },
+  "chicken_wings": {
+    "name": "Cánh Gà Chiên Chiên BBQ",
+    "category": "Fast Food",
+    "calories": 430,
+    "protein_g": 30.0,
+    "carbs_g": 15.0,
+    "fat_g": 28.0
+  },
+  "chocolate_cake": {
+    "name": "Bánh Socola Chocolate Cake",
+    "category": "Tráng Miệng",
+    "calories": 370,
+    "protein_g": 5.0,
+    "carbs_g": 52.0,
+    "fat_g": 17.0
+  },
+  "churros": {
+    "name": "Bánh Quẩy Churros Tây Ban Nha",
+    "category": "Tráng Miệng",
+    "calories": 280,
+    "protein_g": 3.5,
+    "carbs_g": 36.0,
+    "fat_g": 14.0
+  },
+  "club_sandwich": {
+    "name": "Bánh Mì Kẹp Club Sandwich",
+    "category": "Fast Food",
+    "calories": 420,
+    "protein_g": 24.0,
+    "carbs_g": 41.0,
+    "fat_g": 18.0
+  },
+  "cup_cakes": {
+    "name": "Bánh Cupcake Kem",
+    "category": "Tráng Miệng",
+    "calories": 240,
+    "protein_g": 2.5,
+    "carbs_g": 33.0,
+    "fat_g": 11.0
+  },
+  "donuts": {
+    "name": "Bánh Donut Socola",
+    "category": "Tráng Miệng",
+    "calories": 270,
+    "protein_g": 3.5,
+    "carbs_g": 31.0,
+    "fat_g": 15.0
+  },
+  "dumplings": {
+    "name": "Há Cảo Hấp",
+    "category": "Món Hấp",
+    "calories": 240,
+    "protein_g": 12.0,
+    "carbs_g": 32.0,
+    "fat_g": 7.0
+  },
+  "eggs_benedict": {
+    "name": "Trứng Chần Eggs Benedict",
+    "category": "Điểm Tâm",
+    "calories": 360,
+    "protein_g": 18.0,
+    "carbs_g": 24.0,
+    "fat_g": 22.0
+  },
+  "falafel": {
+    "name": "Chả Đậu Falafel",
+    "category": "Ăn Chay",
+    "calories": 330,
+    "protein_g": 13.0,
+    "carbs_g": 32.0,
+    "fat_g": 17.0
+  },
+  "filet_mignon": {
+    "name": "Bít Tết Filet Mignon",
+    "category": "Món Nướng",
+    "calories": 460,
+    "protein_g": 44.0,
+    "carbs_g": 1.0,
+    "fat_g": 30.0
+  },
+  "french_fries": {
+    "name": "Khoai Tây Chiên",
+    "category": "Fast Food",
+    "calories": 365,
+    "protein_g": 4.0,
+    "carbs_g": 48.0,
+    "fat_g": 17.0
+  },
+  "fried_rice": {
+    "name": "Cơm Chiên Dương Châu",
+    "category": "Cơm Món",
+    "calories": 420,
+    "protein_g": 14.0,
+    "carbs_g": 62.0,
+    "fat_g": 14.0
+  },
+  "garlic_bread": {
+    "name": "Bánh Mì Bơ Tỏi",
+    "category": "Khai Vị",
+    "calories": 210,
+    "protein_g": 5.0,
+    "carbs_g": 26.0,
+    "fat_g": 10.0
+  },
+  "greek_salad": {
+    "name": "Salad Hy Lạp Feta",
+    "category": "Salad",
+    "calories": 180,
+    "protein_g": 6.0,
+    "carbs_g": 8.0,
+    "fat_g": 14.0
+  },
+  "gyoza": {
+    "name": "Bánh Chẻo Gyoza Nhật",
+    "category": "Món Chiên",
+    "calories": 260,
+    "protein_g": 11.0,
+    "carbs_g": 28.0,
+    "fat_g": 11.0
+  },
+  "hamburger": {
+    "name": "Beef Hamburger",
+    "category": "Fast Food",
+    "calories": 295,
+    "protein_g": 17.0,
+    "carbs_g": 30.0,
+    "fat_g": 13.0
+  },
+  "hot_and_sour_soup": {
+    "name": "Súp Chua Cay Tứ Xuyên",
+    "category": "Súp",
+    "calories": 160,
+    "protein_g": 9.0,
+    "carbs_g": 14.0,
+    "fat_g": 7.0
+  },
+  "hot_dog": {
+    "name": "Bánh Mì Xúc Xích Hot Dog",
+    "category": "Fast Food",
+    "calories": 310,
+    "protein_g": 12.0,
+    "carbs_g": 24.0,
+    "fat_g": 18.0
+  },
+  "ice_cream": {
+    "name": "Kem Trái Cây",
+    "category": "Tráng Miệng",
+    "calories": 210,
+    "protein_g": 4.0,
+    "carbs_g": 28.0,
+    "fat_g": 10.0
+  },
+  "lasagna": {
+    "name": "Lasagna Ý Đút Lò",
+    "category": "Món Ý",
+    "calories": 410,
+    "protein_g": 21.0,
+    "carbs_g": 35.0,
+    "fat_g": 20.0
+  },
+  "macaroni_and_cheese": {
+    "name": "Nui Phô Mai Mac & Cheese",
+    "category": "Món Ý",
+    "calories": 450,
+    "protein_g": 16.0,
+    "carbs_g": 46.0,
+    "fat_g": 22.0
+  },
+  "macarons": {
+    "name": "Bánh Macaron Pháp",
+    "category": "Tráng Miệng",
+    "calories": 160,
+    "protein_g": 3.0,
+    "carbs_g": 22.0,
+    "fat_g": 7.0
+  },
+  "nachos": {
+    "name": "Bánh Bắp Phô Mai Nachos",
+    "category": "Snack",
+    "calories": 480,
+    "protein_g": 12.0,
+    "carbs_g": 55.0,
+    "fat_g": 24.0
+  },
+  "omelette": {
+    "name": "Trứng Chiên Omelette",
+    "category": "Điểm Tâm",
+    "calories": 240,
+    "protein_g": 14.0,
+    "carbs_g": 2.0,
+    "fat_g": 19.0
+  },
+  "pad_thai": {
+    "name": "Pad Thai Xào Tôm",
+    "category": "Món Xào",
+    "calories": 450,
+    "protein_g": 20.0,
+    "carbs_g": 60.0,
+    "fat_g": 15.0
+  },
+  "pancakes": {
+    "name": "Bánh Kếp Pancakes Bơ Mật Ong",
+    "category": "Điểm Tâm",
+    "calories": 350,
+    "protein_g": 8.0,
+    "carbs_g": 58.0,
+    "fat_g": 10.0
+  },
+  "pho": {
+    "name": "Phở Bò Việt Nam",
+    "category": "Món Nước",
+    "calories": 380,
+    "protein_g": 22.0,
+    "carbs_g": 54.0,
+    "fat_g": 8.5
+  },
+  "pizza": {
+    "name": "Pepperoni Pizza",
+    "category": "Fast Food",
+    "calories": 285,
+    "protein_g": 12.0,
+    "carbs_g": 34.0,
+    "fat_g": 11.0
+  },
+  "ramen": {
+    "name": "Tonkotsu Ramen",
+    "category": "Món Nước",
+    "calories": 520,
+    "protein_g": 25.0,
+    "carbs_g": 65.0,
+    "fat_g": 18.0
+  },
+  "ravioli": {
+    "name": "Bánh Mì Ý Ravioli Nhân Thịt",
+    "category": "Món Ý",
+    "calories": 380,
+    "protein_g": 18.0,
+    "carbs_g": 42.0,
+    "fat_g": 15.0
+  },
+  "risotto": {
+    "name": "Cơm Ý Risotto Nấm Phô Mai",
+    "category": "Món Ý",
+    "calories": 420,
+    "protein_g": 11.0,
+    "carbs_g": 54.0,
+    "fat_g": 18.0
+  },
+  "samosa": {
+    "name": "Bánh Tam Giác Samosa Ấn Độ",
+    "category": "Chiên Rán",
+    "calories": 260,
+    "protein_g": 5.0,
+    "carbs_g": 32.0,
+    "fat_g": 12.0
+  },
+  "spaghetti_bolognese": {
+    "name": "Mì Ý Sốt Bò Băm Spaghetti",
+    "category": "Món Ý",
+    "calories": 440,
+    "protein_g": 22.0,
+    "carbs_g": 58.0,
+    "fat_g": 13.0
+  },
+  "spring_rolls": {
+    "name": "Gỏi Cuốn Tôm Thịt",
+    "category": "Món Cuốn",
+    "calories": 180,
+    "protein_g": 11.0,
+    "carbs_g": 24.0,
+    "fat_g": 3.5
+  },
+  "steak": {
+    "name": "Bít Tết Bò BBQ",
+    "category": "Món Nướng",
+    "calories": 480,
+    "protein_g": 42.0,
+    "carbs_g": 2.0,
+    "fat_g": 32.0
+  },
+  "sushi": {
+    "name": "Salmon Sushi Roll",
+    "category": "Hải Sản",
+    "calories": 310,
+    "protein_g": 18.0,
+    "carbs_g": 42.0,
+    "fat_g": 5.2
+  },
+  "tacos": {
+    "name": "Tacos Bò Mexico",
+    "category": "Fast Food",
+    "calories": 310,
+    "protein_g": 16.0,
+    "carbs_g": 26.0,
+    "fat_g": 15.0
+  },
+  "waffles": {
+    "name": "Bánh Tổ Ong Waffles",
+    "category": "Tráng Miệng",
+    "calories": 310,
+    "protein_g": 6.0,
+    "carbs_g": 45.0,
+    "fat_g": 11.0
+  }
+}

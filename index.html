@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NutriVision AI - Phân Tích Dinh Dưỡng Bữa Ăn Thông Minh</title>
+    
+    <!-- Modern Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <!-- Top Navigation Header -->
+    <header class="app-header">
+        <div class="header-container">
+            <div class="brand">
+                <div class="brand-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 2v3M8 3v2M16 3v2"/>
+                        <path d="M4 11h16a1 1 0 0 1 1 1v1a8 8 0 0 1-8 8h-2a8 8 0 0 1-8-8v-1a1 1 0 0 1 1-1z"/>
+                        <path d="M4 11c0-2.5 2-4 4-4h8c2 0 4 1.5 4 4"/>
+                    </svg>
+                </div>
+                <div class="brand-text">
+                    <span class="brand-name">NutriVision <span class="accent">AI</span></span>
+                    <span class="brand-tagline">Smart Food Recognition & Nutrition Tracker</span>
+                </div>
+            </div>
+
+            <div class="header-actions">
+                <div class="server-status">
+                    <span class="status-indicator active"></span>
+                    <button id="modeToggle" class="mode-toggle-btn">AWS Cloud Live (API Gateway)</button>
+                </div>
+                <button id="archModalBtn" class="icon-btn" title="Xem kiến trúc hệ thống AWS">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="2" y="2" width="8" height="8" rx="2"/>
+                        <rect x="14" y="2" width="8" height="8" rx="2"/>
+                        <rect x="14" y="14" width="8" height="8" rx="2"/>
+                        <rect x="2" y="14" width="8" height="8" rx="2"/>
+                    </svg>
+                    <span>Kiến trúc AWS</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <main class="app-main">
+        <!-- Hero Header -->
+        <section class="hero-section">
+            <h1 class="hero-title">Nhận Diện Món Ăn & Phân Tích Dinh Dưỡng Bằng AI</h1>
+            <p class="hero-desc">Tự động nhận diện hình ảnh món ăn và ước tính hàm lượng Calo, Protein, Carbs, Fat theo khẩu phần.</p>
+        </section>
+
+        <!-- 2-Column Application Grid -->
+        <div class="workspace-grid">
+            
+            <!-- Left Column: Input & Controls -->
+            <section class="panel-card upload-panel">
+                <div class="panel-header">
+                    <h2>Tải Ảnh Bữa Ăn</h2>
+                    <p class="panel-subtitle">Kéo thả ảnh hoặc chọn món mẫu có sẵn</p>
+                </div>
+
+                <!-- Dropzone Area -->
+                <div class="upload-dropzone" id="dropZone">
+                    <input type="file" id="fileInput" accept="image/*" class="file-input-hidden">
+                    <div class="dropzone-content" id="dropContent">
+                        <div class="upload-icon-wrapper">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                                <polyline points="17 8 12 3 7 8"/>
+                                <line x1="12" y1="3" x2="12" y2="15"/>
+                            </svg>
+                        </div>
+                        <p class="upload-primary-text">Nhấp để chọn hoặc kéo thả ảnh món ăn vào đây</p>
+                        <p class="upload-secondary-text">Hỗ trợ định dạng JPG, PNG, WebP</p>
+                    </div>
+                    <img id="imagePreview" class="image-preview hidden" alt="Meal Preview">
+                </div>
+
+                <!-- Quick Sample Food Pills -->
+                <div class="control-group">
+                    <label class="control-label">Món Ăn Mẫu:</label>
+                    <div class="pill-group">
+                        <button class="pill-btn sample-btn" data-sample="pho">🍜 Phở Bò (Ảnh Mẫu Pho.jpg)</button>
+                    </div>
+                </div>
+
+                <!-- Portion Size Multiplier -->
+                <div class="control-group">
+                    <label class="control-label">Khẩu Phần Ăn (Portion Multiplier):</label>
+                    <div class="pill-group portion-group">
+                        <button class="pill-btn portion-btn" data-scale="0.7">Nhỏ (0.7x)</button>
+                        <button class="pill-btn portion-btn active" data-scale="1.0">Vừa (1.0x)</button>
+                        <button class="pill-btn portion-btn" data-scale="1.5">Lớn (1.5x)</button>
+                        <button class="pill-btn portion-btn" data-scale="2.0">Đặc Biệt (2.0x)</button>
+                    </div>
+                </div>
+
+                <!-- Primary Action Button -->
+                <div class="action-row">
+                    <button id="analyzeBtn" class="btn btn-primary" disabled>
+                        <span class="btn-text">Phân Tích Dinh Dưỡng</span>
+                        <div class="spinner hidden" id="spinner"></div>
+                    </button>
+                </div>
+
+                <!-- Collapsible API Configuration -->
+                <details class="endpoint-details">
+                    <summary>Cấu hình Server & Endpoint</summary>
+                    <div class="endpoint-input-wrapper">
+                        <label for="apiUrl">Live Endpoint URL:</label>
+                        <input type="text" id="apiUrl" value="https://juv9jodvpc.execute-api.ap-southeast-1.amazonaws.com/prod/predict" class="text-input">
+                    </div>
+                </details>
+            </section>
+
+            <!-- Right Column: Results & Nutrition Breakdown -->
+            <section class="panel-card results-panel">
+                <div class="panel-header flex-header">
+                    <div>
+                        <h2>Kết Quả Dinh Dưỡng</h2>
+                        <p class="panel-subtitle">Thông số calo và macronutrient từ AI</p>
+                    </div>
+                    <span class="badge-latency" id="latencyBadge">Response: -- ms</span>
+                </div>
+
+                <!-- Warning Callout Banner -->
+                <div id="warningBanner" class="warning-callout hidden">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10"/>
+                        <line x1="12" y1="8" x2="12" y2="12"/>
+                        <line x1="12" y1="16" x2="12.01" y2="16"/>
+                    </svg>
+                    <span id="warningText">Cảnh báo hệ thống</span>
+                </div>
+
+                <!-- Empty Placeholder State -->
+                <div id="placeholderState" class="empty-results">
+                    <div class="empty-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+                        </svg>
+                    </div>
+                    <h3>Chưa có dữ liệu phân tích</h3>
+                    <p>Vui lòng chọn ảnh món ăn ở bảng bên trái và nhấn nút <strong>"Phân Tích Dinh Dưỡng"</strong>.</p>
+                </div>
+
+                <!-- Results Output State -->
+                <div id="resultState" class="results-body hidden">
+                    <!-- Top Dish Header -->
+                    <div class="food-banner">
+                        <div class="food-identity">
+                            <h3 id="foodName" class="food-name">Phở Bò Việt Nam</h3>
+                            <span id="foodCategory" class="category-badge">Món Nước / Việt Nam</span>
+                        </div>
+                        <div class="calorie-display">
+                            <span id="calorieValue" class="calorie-number">380</span>
+                            <span class="calorie-unit">kcal</span>
+                        </div>
+                    </div>
+
+                    <!-- Confidence Progress Bar -->
+                    <div class="confidence-box">
+                        <div class="confidence-header">
+                            <span>Độ chính xác AI (Confidence):</span>
+                            <strong id="confidenceText">94.8%</strong>
+                        </div>
+                        <div class="progress-track">
+                            <div id="confidenceFill" class="progress-fill" style="width: 94.8%;"></div>
+                        </div>
+                    </div>
+
+                    <!-- Nutrition Chart & Macros Breakdown -->
+                    <div class="macros-grid">
+                        <div class="chart-container">
+                            <canvas id="macroChart"></canvas>
+                        </div>
+                        <div class="macro-list">
+                            <div class="macro-card protein">
+                                <div class="macro-info">
+                                    <span class="macro-label">Protein</span>
+                                    <span class="macro-desc">Đạm</span>
+                                </div>
+                                <strong id="proteinVal" class="macro-val">22g</strong>
+                            </div>
+                            <div class="macro-card carbs">
+                                <div class="macro-info">
+                                    <span class="macro-label">Carbs</span>
+                                    <span class="macro-desc">Tinh bột</span>
+                                </div>
+                                <strong id="carbsVal" class="macro-val">54g</strong>
+                            </div>
+                            <div class="macro-card fat">
+                                <div class="macro-info">
+                                    <span class="macro-label">Fat</span>
+                                    <span class="macro-desc">Chất béo</span>
+                                </div>
+                                <strong id="fatVal" class="macro-val">8.5g</strong>
+                            </div>
+                            <div class="macro-card fiber">
+                                <div class="macro-info">
+                                    <span class="macro-label">Fiber</span>
+                                    <span class="macro-desc">Chất xơ</span>
+                                </div>
+                                <strong id="fiberVal" class="macro-val">3.2g</strong>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- System Trace Footer -->
+                    <div class="system-trace-footer">
+                        <div class="trace-item">
+                            <span class="trace-label">Engine:</span>
+                            <code id="aiEngine">EfficientNet-B0 Fine-Tuned ONNX Model</code>
+                        </div>
+                        <div class="trace-item">
+                            <span class="trace-label">Latency:</span>
+                            <code id="traceLatency">38 ms</code>
+                        </div>
+                        <div class="trace-item">
+                            <span class="trace-label">Status:</span>
+                            <code id="traceStatus">200 OK</code>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- AWS Architecture & System Info Modal -->
+    <div id="archModal" class="modal-backdrop hidden">
+        <div class="modal-box">
+            <div class="modal-header">
+                <h3>Kiến Trúc Hệ Thống Serverless AWS NutriVision</h3>
+                <button id="closeModalBtn" class="close-btn">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="arch-flow-diagram">
+                    <div class="flow-card">
+                        <div class="flow-step">1</div>
+                        <h4>Client Frontend</h4>
+                        <p>Web App (HTML/CSS/JS) gửi Payload Base64 + Khẩu phần ăn.</p>
+                    </div>
+                    <div class="flow-arrow">&rarr;</div>
+                    <div class="flow-card">
+                        <div class="flow-step">2</div>
+                        <h4>Amazon API Gateway</h4>
+                        <p>Tiếp nhận request HTTP REST, xác thực & định tuyến đến Lambda.</p>
+                    </div>
+                    <div class="flow-arrow">&rarr;</div>
+                    <div class="flow-card">
+                        <div class="flow-step">3</div>
+                        <h4>AWS Lambda / Container</h4>
+                        <p>Chạy EfficientNet-B0 ONNX Inference Engine & tính Calo.</p>
+                    </div>
+                </div>
+                <div class="arch-tech-summary">
+                    <h4>Thông Số Kỹ Thuật (Tech Specs):</h4>
+                    <ul>
+                        <li><strong>Model Architecture:</strong> EfficientNet-B0 fine-tuned trên Food-101 + Món Việt Nam</li>
+                        <li><strong>Inference Latency:</strong> ~35-50ms với ONNX Runtime CPU Execution Provider</li>
+                        <li><strong>Edge Case Handling:</strong> HTTP 400 (Bad Base64), 422 (Image blur/dark), Low Confidence Cutoff (<60%)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
